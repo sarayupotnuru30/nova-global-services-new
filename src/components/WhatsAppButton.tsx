@@ -1,8 +1,10 @@
 import { motion } from "framer-motion";
 
+const WA_FLOAT = `https://wa.me/918143188042?text=${encodeURIComponent("Hi Nova Global Services! I have a quick query. Could you please assist me? Thank you!")}`;
+
 const WhatsAppButton = () => (
   <motion.a
-    href="https://wa.me/918143188042?text=Hi%20Nova%20Global%20Services%2C%20I%20need%20help%20with%20visa%20services."
+    href={WA_FLOAT}
     target="_blank"
     rel="noopener noreferrer"
     className="fixed bottom-6 right-6 z-50 w-14 h-14 rounded-full flex items-center justify-center shadow-lg animate-pulse-glow"

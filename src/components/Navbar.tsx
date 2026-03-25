@@ -11,6 +11,8 @@ const navLinks = [
   { to: "/contact", label: "Contact" },
 ];
 
+const WA_NAV = `https://wa.me/918143188042?text=${encodeURIComponent("Hello Nova Global Services! I'd like a free consultation. Please guide me with the next steps. Thank you!")}`;
+
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -61,7 +63,7 @@ const Navbar = () => {
             </Link>
           ))}
           <a
-            href="https://wa.me/918143188042?text=Hi%20Nova%20Global%20Services%2C%20I%20need%20help%20with%20visa%20services."
+            href={WA_NAV}
             target="_blank"
             rel="noopener noreferrer"
             className="bg-cta-gradient px-5 py-2.5 rounded-full text-sm font-semibold text-primary-foreground shadow-nova hover:opacity-90 transition-opacity"
@@ -104,7 +106,7 @@ const Navbar = () => {
                 </Link>
               ))}
               <a
-                href="https://wa.me/918143188042?text=Hi%20Nova%20Global%20Services%2C%20I%20need%20help%20with%20visa%20services."
+                href={WA_NAV}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-cta-gradient px-5 py-2.5 rounded-full text-sm font-semibold text-primary-foreground text-center mt-2"

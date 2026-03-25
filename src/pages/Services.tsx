@@ -7,7 +7,7 @@ import businessVisa from "@/assets/services/business-visa.jpg";
 import flightBooking from "@/assets/services/flight-booking.jpg";
 import aboutTeam from "@/assets/about/about-team.jpg";
 
-const WA = "https://wa.me/918143188042?text=Hi%2C%20I%20am%20interested%20in%20";
+const waMsg = (msg: string) => `https://wa.me/918143188042?text=${encodeURIComponent(msg)}`;
 
 const fadeUp = {
   hidden: { opacity: 0, y: 40 },
@@ -50,7 +50,7 @@ const ServiceCard = ({ img, title, desc, i }: { img: string; title: string; desc
       <h3 className="font-heading text-lg font-bold text-foreground">{title}</h3>
       <p className="mt-2 text-sm text-muted-foreground">{desc}</p>
       <a
-        href={`${WA}${encodeURIComponent(title)}`}
+        href={waMsg(`Hello Nova Global Services! I'm interested in your "${title}" service. Could you please provide more details? Thank you!`)}
         target="_blank"
         rel="noopener noreferrer"
         className="inline-block mt-4 text-sm font-semibold text-accent hover:underline"
