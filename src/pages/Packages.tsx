@@ -6,7 +6,8 @@ import honeymoon from "@/assets/packages/honeymoon.jpg";
 import trekking from "@/assets/packages/trekking.jpg";
 import soloTravel from "@/assets/packages/solo-travel.jpg";
 
-const WA = "https://wa.me/918143188042?text=Hi%2C%20I%20am%20interested%20in%20";
+const waMsg = (title: string) =>
+  `https://wa.me/918143188042?text=${encodeURIComponent(`Hello Nova Global Services! I'm interested in your "${title}" package. Could you please share the details, itinerary, and pricing? Thank you!`)}`;
 
 const fadeUp = {
   hidden: { opacity: 0, y: 40 },
@@ -25,6 +26,33 @@ const specialPackages = [
   { img: trekking, title: "Trekking Trips", desc: "From Himalayan trails to European Alpine routes — gear up for the adventure of a lifetime." },
   { img: trekking, title: "Biking Trips", desc: "Cruise through scenic roads and mountain passes on thrilling motorcycle adventures." },
 ];
+
+const PackageCard = ({ img, title, desc, i }: { img: string; title: string; desc: string; i: number }) => (
+  <motion.div
+    custom={i}
+    initial="hidden"
+    whileInView="visible"
+    viewport={{ once: true }}
+    variants={fadeUp}
+    className="group bg-card rounded-2xl overflow-hidden shadow-card hover:shadow-nova transition-shadow"
+  >
+    <div className="aspect-[4/3] overflow-hidden">
+      <img src={img} alt={title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" width={960} height={640} />
+    </div>
+    <div className="p-6">
+      <h3 className="font-heading text-lg font-bold text-foreground">{title}</h3>
+      <p className="mt-2 text-sm text-muted-foreground">{desc}</p>
+      <a
+        href={waMsg(title)}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="inline-block mt-4 bg-cta-gradient px-5 py-2 rounded-full text-sm font-semibold text-primary-foreground hover:opacity-90 transition-opacity"
+      >
+        Enquire Now
+      </a>
+    </div>
+  </motion.div>
+);
 
 const Packages = () => (
   <div>
@@ -45,33 +73,7 @@ const Packages = () => (
       <div className="container mx-auto px-4">
         <SectionHeading subtitle="Popular Packages" title="International & Domestic Packages" description="Handpicked experiences for every kind of traveler." />
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {internationalPackages.map((p, i) => (
-            <motion.div
-              key={p.title}
-              custom={i}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              variants={fadeUp}
-              className="group bg-card rounded-2xl overflow-hidden shadow-card hover:shadow-nova transition-shadow"
-            >
-              <div className="aspect-[4/3] overflow-hidden">
-                <img src={p.img} alt={p.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" width={960} height={640} />
-              </div>
-              <div className="p-6">
-                <h3 className="font-heading text-lg font-bold text-foreground">{p.title}</h3>
-                <p className="mt-2 text-sm text-muted-foreground">{p.desc}</p>
-                <a
-                  href={`${WA}${encodeURIComponent(p.title)}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-block mt-4 bg-cta-gradient px-5 py-2 rounded-full text-sm font-semibold text-primary-foreground hover:opacity-90 transition-opacity"
-                >
-                  Enquire Now
-                </a>
-              </div>
-            </motion.div>
-          ))}
+          {internationalPackages.map((p, i) => <PackageCard key={p.title} {...p} i={i} />)}
         </div>
       </div>
     </section>
@@ -80,33 +82,7 @@ const Packages = () => (
       <div className="container mx-auto px-4">
         <SectionHeading subtitle="Adventure" title="Special Travel Experiences" description="For the thrill-seekers and adventure lovers." />
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
-          {specialPackages.map((p, i) => (
-            <motion.div
-              key={p.title}
-              custom={i}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              variants={fadeUp}
-              className="group bg-card rounded-2xl overflow-hidden shadow-card hover:shadow-nova transition-shadow"
-            >
-              <div className="aspect-[16/10] overflow-hidden">
-                <img src={p.img} alt={p.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" width={960} height={640} />
-              </div>
-              <div className="p-6">
-                <h3 className="font-heading text-xl font-bold text-foreground">{p.title}</h3>
-                <p className="mt-2 text-sm text-muted-foreground">{p.desc}</p>
-                <a
-                  href={`${WA}${encodeURIComponent(p.title)}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-block mt-4 bg-cta-gradient px-5 py-2 rounded-full text-sm font-semibold text-primary-foreground hover:opacity-90 transition-opacity"
-                >
-                  Enquire Now
-                </a>
-              </div>
-            </motion.div>
-          ))}
+          {specialPackages.map((p, i) => <PackageCard key={p.title} {...p} i={i} />)}
         </div>
       </div>
     </section>

@@ -15,8 +15,14 @@ import honeymoon from "@/assets/packages/honeymoon.jpg";
 import trekking from "@/assets/packages/trekking.jpg";
 import aboutTeam from "@/assets/about/about-team.jpg";
 
-const WA_LINK = "https://wa.me/918143188042?text=Hi%20Nova%20Global%20Services%2C%20I%20need%20help%20with%20visa%20services.";
-const WA_CALLBACK = "https://wa.me/918143188042?text=Hi%2C%20I%20would%20like%20a%20free%20callback%20within%2010%20minutes.";
+const WA_BASE = "https://wa.me/918143188042?text=";
+
+const waMsg = (msg: string) => `${WA_BASE}${encodeURIComponent(msg)}`;
+
+const WA_CONSULTATION = waMsg("Hello Nova Global Services! I'd like to get a free consultation regarding your visa and travel services. Could you please guide me?");
+const WA_EXPERT = waMsg("Hi Nova Global Services! I'd love to speak with a visa expert. Could you please help me with my queries?");
+const WA_CALLBACK = waMsg("Hello Nova Global Services! I'd appreciate a free callback within 10 minutes to discuss my travel/visa requirements. Thank you!");
+const WA_CTA_BOTTOM = waMsg("Hi Nova Global Services! I'm interested in starting my global journey. Could you please provide me a free consultation?");
 
 const fadeUp = {
   hidden: { opacity: 0, y: 40 },
@@ -57,7 +63,6 @@ const Home = () => (
       <img src={heroBg} alt="Airport" className="absolute inset-0 w-full h-full object-cover" />
       <div className="absolute inset-0 bg-hero-gradient" />
       
-      {/* Floating elements */}
       <div className="absolute top-20 right-10 text-6xl animate-float opacity-20 select-none">✈️</div>
       <div className="absolute bottom-32 left-10 text-5xl animate-float opacity-15 select-none" style={{ animationDelay: "1s" }}>🌍</div>
 
@@ -96,7 +101,7 @@ const Home = () => (
           transition={{ delay: 0.8 }}
           className="mt-10 flex flex-wrap justify-center gap-4"
         >
-          <a href={WA_LINK} target="_blank" rel="noopener noreferrer" className="bg-cta-gradient px-7 py-3.5 rounded-full font-semibold text-primary-foreground shadow-nova hover:opacity-90 transition-opacity">
+          <a href={WA_CONSULTATION} target="_blank" rel="noopener noreferrer" className="bg-cta-gradient px-7 py-3.5 rounded-full font-semibold text-primary-foreground shadow-nova hover:opacity-90 transition-opacity">
             Get Free Consultation
           </a>
           <Link to="/services" className="px-7 py-3.5 rounded-full font-semibold border-2 border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10 transition-colors">
@@ -110,7 +115,7 @@ const Home = () => (
           transition={{ delay: 1 }}
           className="mt-6 flex flex-wrap justify-center gap-4"
         >
-          <a href={WA_LINK} target="_blank" rel="noopener noreferrer" className="px-6 py-3 rounded-full text-sm font-medium border border-primary-foreground/20 text-primary-foreground hover:bg-primary-foreground/10 transition-colors">
+          <a href={WA_EXPERT} target="_blank" rel="noopener noreferrer" className="px-6 py-3 rounded-full text-sm font-medium border border-primary-foreground/20 text-primary-foreground hover:bg-primary-foreground/10 transition-colors">
             💬 Talk to Expert on WhatsApp
           </a>
           <a href={WA_CALLBACK} target="_blank" rel="noopener noreferrer" className="px-6 py-3 rounded-full text-sm font-semibold bg-nova-gold text-foreground hover:opacity-90 transition-opacity animate-pulse-glow">
@@ -119,7 +124,6 @@ const Home = () => (
         </motion.div>
       </div>
 
-      {/* Scroll indicator */}
       <motion.div
         animate={{ y: [0, 10, 0] }}
         transition={{ repeat: Infinity, duration: 2 }}
@@ -136,15 +140,7 @@ const Home = () => (
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
           {stats.map((s, i) => (
-            <motion.div
-              key={s.label}
-              custom={i}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              variants={fadeUp}
-              className="text-center"
-            >
+            <motion.div key={s.label} custom={i} initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} className="text-center">
               <span className="text-3xl md:text-4xl font-heading font-bold text-gradient">{s.value}</span>
               <p className="mt-1 text-sm text-muted-foreground">{s.label}</p>
             </motion.div>
@@ -190,15 +186,7 @@ const Home = () => (
         <SectionHeading subtitle="What We Offer" title="Our Premium Services" description="From visa processing to flight bookings, we handle everything for your global journey." />
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {services.map((s, i) => (
-            <motion.div
-              key={s.title}
-              custom={i}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              variants={fadeUp}
-              className="group bg-card rounded-2xl overflow-hidden shadow-card hover:shadow-nova transition-shadow"
-            >
+            <motion.div key={s.title} custom={i} initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} className="group bg-card rounded-2xl overflow-hidden shadow-card hover:shadow-nova transition-shadow">
               <div className="aspect-[4/3] overflow-hidden">
                 <img src={s.img} alt={s.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" width={960} height={640} />
               </div>
@@ -223,15 +211,7 @@ const Home = () => (
         <SectionHeading subtitle="Destinations" title="Countries We Serve" description="Expert visa assistance for the world's top destinations." light />
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {countries.map((c, i) => (
-            <motion.div
-              key={c.name}
-              custom={i}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              variants={fadeUp}
-              className="group relative rounded-2xl overflow-hidden aspect-[3/4] cursor-pointer"
-            >
+            <motion.div key={c.name} custom={i} initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} className="group relative rounded-2xl overflow-hidden aspect-[3/4] cursor-pointer">
               <img src={c.img} alt={c.name} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" loading="lazy" width={960} height={640} />
               <div className="absolute inset-0 bg-gradient-to-t from-foreground/80 via-transparent to-transparent" />
               <div className="absolute bottom-6 left-6">
@@ -250,15 +230,7 @@ const Home = () => (
         <SectionHeading subtitle="Travel Packages" title="Explore Our Packages" description="Curated travel experiences for every type of traveler." />
         <div className="grid md:grid-cols-3 gap-8">
           {packages.map((p, i) => (
-            <motion.div
-              key={p.title}
-              custom={i}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              variants={fadeUp}
-              className="group bg-card rounded-2xl overflow-hidden shadow-card hover:shadow-nova transition-shadow"
-            >
+            <motion.div key={p.title} custom={i} initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} className="group bg-card rounded-2xl overflow-hidden shadow-card hover:shadow-nova transition-shadow">
               <div className="aspect-[16/10] overflow-hidden">
                 <img src={p.img} alt={p.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" width={960} height={640} />
               </div>
@@ -266,7 +238,7 @@ const Home = () => (
                 <h3 className="font-heading text-xl font-bold text-foreground">{p.title}</h3>
                 <p className="mt-2 text-sm text-muted-foreground">{p.desc}</p>
                 <a
-                  href={`https://wa.me/918143188042?text=Hi%2C%20I%20am%20interested%20in%20${encodeURIComponent(p.title)}`}
+                  href={waMsg(`Hello Nova Global Services! I'm interested in your "${p.title}" package. Could you please share more details and pricing? Thank you!`)}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-block mt-4 text-sm font-semibold text-accent hover:underline"
@@ -295,15 +267,7 @@ const Home = () => (
             { name: "Priya Sharma", text: "Got my student visa for Australia within weeks. Their team is professional and supportive.", role: "Student Visa Client" },
             { name: "Mohammed Ali", text: "Best travel consultancy in Hyderabad. They planned our entire family trip perfectly.", role: "Travel Package Client" },
           ].map((t, i) => (
-            <motion.div
-              key={t.name}
-              custom={i}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              variants={fadeUp}
-              className="bg-muted rounded-2xl p-6"
-            >
+            <motion.div key={t.name} custom={i} initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} className="bg-muted rounded-2xl p-6">
               <div className="flex gap-1 mb-3">
                 {[...Array(5)].map((_, j) => (
                   <span key={j} className="text-nova-gold">★</span>
@@ -331,7 +295,7 @@ const Home = () => (
             Get a free consultation today and let our experts guide you through every step.
           </p>
           <div className="mt-8 flex flex-wrap justify-center gap-4">
-            <a href={WA_LINK} target="_blank" rel="noopener noreferrer" className="px-8 py-3.5 rounded-full font-semibold bg-primary text-primary-foreground shadow-nova hover:opacity-90 transition-opacity">
+            <a href={WA_CTA_BOTTOM} target="_blank" rel="noopener noreferrer" className="px-8 py-3.5 rounded-full font-semibold bg-primary text-primary-foreground shadow-nova hover:opacity-90 transition-opacity">
               Get Free Consultation
             </a>
             <Link to="/contact" className="px-8 py-3.5 rounded-full font-semibold border-2 border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10 transition-colors">
