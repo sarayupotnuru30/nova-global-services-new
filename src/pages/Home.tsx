@@ -19,10 +19,10 @@ const WA_BASE = "https://wa.me/918143188042?text=";
 
 const waMsg = (msg: string) => `${WA_BASE}${encodeURIComponent(msg)}`;
 
-const WA_CONSULTATION = waMsg("Hello Nova Global Services! I'd like to get a free consultation regarding your visa and travel services. Could you please guide me?");
-const WA_EXPERT = waMsg("Hi Nova Global Services! I'd love to speak with a visa expert. Could you please help me with my queries?");
-const WA_CALLBACK = waMsg("Hello Nova Global Services! I'd appreciate a free callback within 10 minutes to discuss my travel/visa requirements. Thank you!");
-const WA_CTA_BOTTOM = waMsg("Hi Nova Global Services! I'm interested in starting my global journey. Could you please provide me a free consultation?");
+const WA_CONSULTATION = waMsg("Hello Nova Global Solutions! I'd like to get a free consultation regarding your visa and travel services. Could you please guide me?");
+const WA_EXPERT = waMsg("Hi Nova Global Solutions! I'd love to speak with a visa expert. Could you please help me with my queries?");
+const WA_CALLBACK = waMsg("Hello Nova Global Solutions! I'd appreciate a free callback within 10 minutes to discuss my travel/visa requirements. Thank you!");
+const WA_CTA_BOTTOM = waMsg("Hi Nova Global Solutions! I'm interested in starting my global journey. Could you please provide me a free consultation?");
 
 const fadeUp = {
   hidden: { opacity: 0, y: 40 },
@@ -159,7 +159,7 @@ const Home = () => (
               Trusted Visa & Travel Consultancy in Hyderabad
             </h2>
             <p className="mt-4 text-muted-foreground leading-relaxed">
-              Nova Global Services is your one-stop destination for visa processing, travel planning, and career abroad support. With years of experience and thousands of satisfied clients, we provide end-to-end assistance to make your global dreams a reality.
+              Nova Global Solutions is your one-stop destination for visa processing, travel planning, and career abroad support. With years of experience and thousands of satisfied clients, we provide end-to-end assistance to make your global dreams a reality.
             </p>
             <div className="mt-6 space-y-3">
               {["Trusted visa guidance for 25+ countries", "End-to-end travel planning & packages", "Career abroad support with resume & profile marketing"].map((item) => (
@@ -238,7 +238,7 @@ const Home = () => (
                 <h3 className="font-heading text-xl font-bold text-foreground">{p.title}</h3>
                 <p className="mt-2 text-sm text-muted-foreground">{p.desc}</p>
                 <a
-                  href={waMsg(`Hello Nova Global Services! I'm interested in your "${p.title}" package. Could you please share more details and pricing? Thank you!`)}
+                  href={waMsg(`Hello Nova Global Solutions! I'm interested in your "${p.title}" package. Could you please share more details and pricing? Thank you!`)}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-block mt-4 text-sm font-semibold text-accent hover:underline"
@@ -263,7 +263,7 @@ const Home = () => (
         <SectionHeading subtitle="Testimonials" title="What Our Clients Say" />
         <div className="grid md:grid-cols-3 gap-8">
           {[
-            { name: "Rajesh Kumar", text: "Nova Global Services made my USA visa process incredibly smooth. Highly recommended!", role: "Tourist Visa Client" },
+            { name: "Rajesh Kumar", text: "Nova Global Solutions made my USA visa process incredibly smooth. Highly recommended!", role: "Tourist Visa Client" },
             { name: "Priya Sharma", text: "Got my student visa for Australia within weeks. Their team is professional and supportive.", role: "Student Visa Client" },
             { name: "Mohammed Ali", text: "Best travel consultancy in Hyderabad. They planned our entire family trip perfectly.", role: "Travel Package Client" },
           ].map((t, i) => (

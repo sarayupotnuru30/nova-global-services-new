@@ -31,10 +31,10 @@ const About = () => (
           <motion.div initial={{ opacity: 0, x: -40 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}>
             <span className="text-sm font-semibold tracking-widest uppercase text-accent">Who We Are</span>
             <h2 className="font-heading text-3xl md:text-4xl font-bold mt-2 text-foreground">
-              Nova Global Services — Your Trusted Partner
+              Nova Global Solutions — Your Trusted Partner
             </h2>
             <p className="mt-4 text-muted-foreground leading-relaxed">
-              Based in Hyderabad, Nova Global Services is a premier visa and travel consultancy firm dedicated to helping individuals and families achieve their global aspirations. Whether you're seeking a tourist visa, planning to study abroad, or looking for career opportunities overseas, we provide comprehensive end-to-end support.
+              Based in Hyderabad, Nova Global Solutions is a premier visa and travel consultancy firm dedicated to helping individuals and families achieve their global aspirations. Whether you're seeking a tourist visa, planning to study abroad, or looking for career opportunities overseas, we provide comprehensive end-to-end support.
             </p>
             <p className="mt-4 text-muted-foreground leading-relaxed">
               Our team of experienced consultants works tirelessly to ensure a seamless experience — from documentation and application filing to travel arrangements and career guidance.

@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 
-const WA_FLOAT = `https://wa.me/918143188042?text=${encodeURIComponent("Hi Nova Global Services! I have a quick query. Could you please assist me? Thank you!")}`;
+const WA_FLOAT = `https://wa.me/918143188042?text=${encodeURIComponent("Hi Nova Global Solutions! I have a quick query. Could you please assist me? Thank you!")}`;
 
 const WhatsAppButton = () => (
   <motion.a

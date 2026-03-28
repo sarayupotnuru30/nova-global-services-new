@@ -23,7 +23,7 @@ const Contact = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    const text = `Hello Nova Global Services!%0A%0AMy name is ${encodeURIComponent(form.name)}.%0APhone: ${encodeURIComponent(form.phone)}%0AService Interested In: ${encodeURIComponent(form.service)}%0AMessage: ${encodeURIComponent(form.message)}%0A%0AKindly assist me. Thank you!`;
+    const text = `Hello Nova Global Solutions!%0A%0AMy name is ${encodeURIComponent(form.name)}.%0APhone: ${encodeURIComponent(form.phone)}%0AService Interested In: ${encodeURIComponent(form.service)}%0AMessage: ${encodeURIComponent(form.message)}%0A%0AKindly assist me. Thank you!`;
     window.open(`https://wa.me/918143188042?text=${text}`, "_blank");
   };
 
@@ -174,7 +174,7 @@ const Contact = () => {
           allowFullScreen
           loading="lazy"
           referrerPolicy="no-referrer-when-downgrade"
-          title="Nova Global Services Location"
+          title="Nova Global Solutions Location"
         />
       </section>
     </div>
