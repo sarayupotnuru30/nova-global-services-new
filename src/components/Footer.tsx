@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { Heart } from "lucide-react"; // Added Heart icon import
-import logo from "@/assets/logo.png";
+import logo from "@/assets/logo2.png";
 
 const Footer = () => {
   const scrollToTop = () => window.scrollTo({ top: 0, behavior: "smooth" });
