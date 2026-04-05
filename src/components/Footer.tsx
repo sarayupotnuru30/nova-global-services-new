@@ -12,10 +12,10 @@ const Footer = () => {
           {/* Brand */}
           <div>
             <div className="flex items-center gap-3 mb-4">
-              <img src={logo} alt="Nova Global Solutions" className="h-12 w-auto" />
+              <img src={logo} alt="Nova Global Immigration and Tours" className="h-12 w-auto" />
               <div>
                 <span className="font-heading text-lg font-bold block">NOVA GLOBAL</span>
-                <span className="text-xs tracking-widest text-primary-foreground/70">Solutions</span>
+                <span className="text-xs tracking-widest text-primary-foreground/70">Immigration and Tours</span>
               </div>
             </div>
             <p className="text-sm text-primary-foreground/70 leading-relaxed">
@@ -80,7 +80,7 @@ const Footer = () => {
         {/* Bottom Bar */}
         <div className="border-t border-primary-foreground/10 mt-12 pt-6 flex flex-col gap-4 text-center text-sm">
           <p className="text-primary-foreground/50">
-            © {new Date().getFullYear()} Nova Global Solutions. All rights reserved.
+            © {new Date().getFullYear()} Nova Global Immigration and Tours. All rights reserved.
           </p>
 
           {/* StaffArc Attribution */}

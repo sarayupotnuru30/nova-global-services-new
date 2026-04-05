@@ -7,7 +7,7 @@ import trekking from "@/assets/packages/trekking.jpg";
 import soloTravel from "@/assets/packages/solo-travel.jpg";
 
 const waMsg = (title: string) =>
-  `https://wa.me/918143188042?text=${encodeURIComponent(`Hello Nova Global Solutions! I'm interested in your "${title}" package. Could you please share the details, itinerary, and pricing? Thank you!`)}`;
+  `https://wa.me/918143188042?text=${encodeURIComponent(`Hello Nova Global Immigration and Tours! I'm interested in your "${title}" package. Could you please share the details, itinerary, and pricing? Thank you!`)}`;
 
 const fadeUp = {
   hidden: { opacity: 0, y: 40 },

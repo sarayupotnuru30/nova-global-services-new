@@ -11,7 +11,7 @@ const navLinks = [
   { to: "/contact", label: "Contact" },
 ];
 
-const WA_NAV = `https://wa.me/918143188042?text=${encodeURIComponent("Hello Nova Global Solutions! I'd like a free consultation. Please guide me with the next steps. Thank you!")}`;
+const WA_NAV = `https://wa.me/918143188042?text=${encodeURIComponent("Hello Nova Global Immigration and Tours! I'd like a free consultation. Please guide me with the next steps. Thank you!")}`;
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -36,13 +36,13 @@ const Navbar = () => {
     >
       <div className="container mx-auto flex items-center justify-between px-4">
         <Link to="/" className="flex items-center gap-3">
-          <img src={logo} alt="Nova Global Solutions" className="h-12 w-auto" />
+          <img src={logo} alt="Nova Global Immigration and Tours" className="h-12 w-auto" />
           <div className="hidden sm:block">
             <span className={`font-heading text-lg font-bold leading-tight ${scrolled ? "text-foreground" : "text-primary-foreground"}`}>
               NOVA GLOBAL
             </span>
             <span className={`block text-xs tracking-widest ${scrolled ? "text-muted-foreground" : "text-primary-foreground/80"}`}>
-              SOLUTIONS
+              Immigration and Tours
             </span>
           </div>
         </Link>
